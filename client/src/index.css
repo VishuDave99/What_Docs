@@ -1,0 +1,710 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+============================================
+  COMPREHENSIVE DARK THEME SYSTEM
+============================================
+This CSS provides a sophisticated theming system with four distinct modes:
+1. Default: Balanced dark theme with indigo accents
+2. Eco: Nature-inspired green theme with enhanced readability
+3. Performance: High-contrast purple theme for focus and productivity
+4. Overdrive: Energetic orange/red theme for intense work sessions
+*/
+
+:root {
+  /* 
+  ======================
+  DEFAULT DARK THEME
+  ======================
+  A clean, balanced dark theme with indigo accent colors.
+  Good for general use and extended sessions.
+  */
+  
+  /* Background Layers - create depth */
+  --bg-primary: #121212;         /* Main background */
+  --bg-secondary: #1e1e1e;       /* Container background */
+  --bg-tertiary: #2d2d2d;        /* Elevated elements */
+  --bg-accent: #3a3a3a;          /* Highlighted areas */
+  
+  /* Text Colors - maintain 4.5:1 contrast ratio minimum */
+  --text-primary: #f0f0f0;       /* Main text */
+  --text-secondary: #b8b8b8;     /* Secondary information */
+  --text-muted: #8a8a8a;         /* Less important text */
+  --text-accent: #ffffff;        /* Emphasized text */
+  --text-on-accent: #ffffff;     /* Text on accent backgrounds */
+  
+  /* Structure Elements */
+  --border-color: #3d3d3d;       /* Visible borders */
+  --divider-color: #2a2a2a;      /* Subtle separators */
+  --outline-color: #4d4d4d;      /* Focus outlines */
+  
+  /* Brand Colors */
+  --primary-color: #6366f1;      /* Main accent color */
+  --primary-light: #8385f4;      /* Lighter accent variant */
+  --primary-dark: #4f46e5;       /* Darker accent variant */
+  --primary-muted: rgba(99, 102, 241, 0.15); /* Background accent */
+  --primary-color-rgb: 99, 102, 241; /* RGB values for advanced effects */
+  
+  /* Status Colors */
+  --success-color: #22c55e;
+  --warning-color: #eab308;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
+  
+  /* Advanced Shadows and Effects - Ultra Premium System */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.22);
+  --shadow-inner: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Neumorphic Shadows */
+  --shadow-neu-raised: 
+    8px 8px 16px rgba(0, 0, 0, 0.25),
+    -8px -8px 16px rgba(255, 255, 255, 0.03);
+  --shadow-neu-pressed: 
+    inset 8px 8px 16px rgba(0, 0, 0, 0.25),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.03);
+    
+  /* Glow Effects */
+  --shadow-glow: 0 0 20px rgba(var(--primary-color-rgb), 0.5);
+  --shadow-glow-sm: 0 0 10px rgba(var(--primary-color-rgb), 0.3);
+  --shadow-glow-lg: 0 0 30px rgba(var(--primary-color-rgb), 0.6);
+  --shadow-subtle-glow: 0 0 15px rgba(255, 255, 255, 0.07);
+  
+  /* UI Component Colors */
+  --sidebar-bg: #0f0f0f;
+  --sidebar-text: #d0d0d0;
+  --sidebar-highlight: rgba(99, 102, 241, 0.15);
+  
+  --card-bg: #1a1a1a;
+  --header-bg: #1a1a1a;
+  --footer-bg: #0f0f0f;
+  
+  --input-bg: #2c2c2c;
+  --input-border: #3d3d3d;
+  --input-focus-border: #6366f1;
+  
+  --button-primary-bg: #6366f1;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #3a3a3a;
+  --button-secondary-text: #f0f0f0;
+  
+  --scrollbar-thumb: #4d4d4d;
+  --scrollbar-track: #1a1a1a;
+  
+  --toggle-bg-off: #3d3d3d;
+  --toggle-bg-on: #6366f1;
+  
+  /* Spacing & Layout */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  
+  /* Border Radius - Updated for premium look */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* 
+======================
+ECO MODE
+======================
+A nature-inspired green theme that conveys efficiency
+and sustainability. Maintains excellent readability.
+*/
+.eco-mode {
+  /* Brand Colors - Refreshing Greens */
+  --primary-color: #10b981;      /* Emerald green */
+  --primary-light: #34d399;
+  --primary-dark: #059669;
+  --primary-muted: rgba(16, 185, 129, 0.15);
+  
+  /* Background with subtle green tint */
+  --bg-primary: #0f1613;         /* Very dark green-tinted background */
+  --bg-secondary: #151e1a;       /* Slightly lighter than primary */
+  --bg-tertiary: #1c2922;        /* Raised elements */
+  --bg-accent: #233a31;          /* Highlighted areas with green tint */
+  
+  /* Text Colors - Enhanced for green backgrounds */
+  --text-primary: #eef2f0;       /* Slightly off-white for less eye strain */
+  --text-secondary: #b0c4ba;     /* Green-tinted secondary text */
+  --text-muted: #7d9a8a;         /* Muted text with green hint */
+  --text-accent: #ffffff;
+  --text-on-accent: #ffffff;
+  
+  /* Structure Elements */
+  --border-color: #2b3c33;
+  --divider-color: #1e2e25;
+  --outline-color: #34534a;
+
+  /* UI Component Colors */
+  --sidebar-bg: #0a100e;
+  --sidebar-text: #cce3d8;
+  --sidebar-highlight: rgba(16, 185, 129, 0.15);
+  
+  --card-bg: #131c18;
+  --header-bg: #131c18;
+  --footer-bg: #0a100e;
+  
+  --input-bg: #1c2922;
+  --input-border: #2b3c33;
+  --input-focus-border: #10b981;
+  
+  --button-primary-bg: #10b981;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #233a31;
+  --button-secondary-text: #eef2f0;
+  
+  --toggle-bg-on: #10b981;
+  --scrollbar-thumb: #34534a;
+}
+
+/* 
+======================
+PERFORMANCE MODE
+======================
+A high-contrast purple theme that conveys power
+and focus. Designed for productivity sessions.
+*/
+.performance-mode {
+  /* Brand Colors - Royal Purples */
+  --primary-color: #8b5cf6;      /* Vibrant purple */
+  --primary-light: #a78bfa;
+  --primary-dark: #7c3aed;
+  --primary-muted: rgba(139, 92, 246, 0.15);
+  
+  /* Background with subtle purple tint */
+  --bg-primary: #12101a;         /* Deep blue-purple background */
+  --bg-secondary: #1a1726;       /* Slightly elevated elements */
+  --bg-tertiary: #241d33;        /* Raised elements */
+  --bg-accent: #2e2446;          /* Highlighted areas */
+  
+  /* Text Colors - Enhanced for purple backgrounds */
+  --text-primary: #f0ecff;       /* Slightly purple-tinted white for main text */
+  --text-secondary: #bbb3de;     /* Purple-tinted secondary text */
+  --text-muted: #8679ad;         /* Muted text with purple hint */
+  --text-accent: #ffffff;
+  --text-on-accent: #ffffff;
+  
+  /* Structure Elements */
+  --border-color: #352a4d;
+  --divider-color: #241d33;
+  --outline-color: #473663;
+
+  /* UI Component Colors */
+  --sidebar-bg: #0e0c17;
+  --sidebar-text: #d3cbf0;
+  --sidebar-highlight: rgba(139, 92, 246, 0.15);
+  
+  --card-bg: #181322;
+  --header-bg: #181322;
+  --footer-bg: #0e0c17;
+  
+  --input-bg: #241d33;
+  --input-border: #352a4d;
+  --input-focus-border: #8b5cf6;
+  
+  --button-primary-bg: #8b5cf6;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #2e2446;
+  --button-secondary-text: #f0ecff;
+  
+  --toggle-bg-on: #8b5cf6;
+  --scrollbar-thumb: #473663;
+}
+
+/* 
+======================
+OVERDRIVE MODE
+======================
+A vibrant crimson/orange theme that conveys intensity,
+power and energy. Perfect for creative surges and deep focus.
+*/
+.overdrive-mode {
+  /* Brand Colors - Crimson Red with Bright Orange accents */
+  --primary-color: #dc2626;      /* Crimson red */
+  --primary-light: #f97316;      /* Bright orange */
+  --primary-dark: #b91c1c;       /* Darker crimson */
+  --primary-muted: rgba(220, 38, 38, 0.15);
+  
+  /* Background with intense red-tinted dark background */
+  --bg-primary: #18090a;         /* Deep red-tinted background */
+  --bg-secondary: #230d0f;       /* Slightly elevated elements */
+  --bg-tertiary: #2f1214;        /* Raised elements */
+  --bg-accent: #3b1418;          /* Highlighted areas */
+  
+  /* Text Colors - Enhanced for crimson backgrounds */
+  --text-primary: #fff1f1;       /* Slightly red-tinted white */
+  --text-secondary: #e6c4c5;     /* Red-tinted secondary text */
+  --text-muted: #c08a8c;         /* Muted text with red hint */
+  --text-accent: #ffffff;
+  --text-on-accent: #ffffff;
+  
+  /* Structure Elements */
+  --border-color: #4f1a1d;
+  --divider-color: #331012;
+  --outline-color: #661c20;
+
+  /* UI Component Colors */
+  --sidebar-bg: #14080a;
+  --sidebar-text: #ecc8ca;
+  --sidebar-highlight: rgba(220, 38, 38, 0.18);
+  
+  /* Card and Container Colors */
+  --card-bg: #1f0d0f;
+  --header-bg: #1f0d0f;
+  --footer-bg: #14080a;
+  
+  /* Input Elements */
+  --input-bg: #2a1113;
+  --input-border: #4a181b;
+  --input-focus-border: #dc2626;
+  
+  /* Button Elements */
+  --button-primary-bg: #dc2626;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #3b1418;
+  --button-secondary-text: #fff1f1;
+  
+  /* Accents */
+  --toggle-bg-on: #f97316;      /* Orange toggle for contrast */
+  --scrollbar-thumb: #661c20;
+
+  /* Special Highlight Gradients for Overdrive Mode */
+  --highlight-gradient: linear-gradient(90deg, #dc2626, #f97316);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    /* Add a smooth transition when changing themes */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Text Elements */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-accent);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+  }
+  
+  p {
+    margin-bottom: var(--space-md);
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+  }
+  
+  /* Horizontal Line - Styled for visual appeal */
+  hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--divider-color),
+      var(--primary-color),
+      var(--divider-color),
+      transparent
+    );
+    margin: var(--space-lg) 0;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+  }
+}
+
+@layer components {
+  /* Container Elements */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Premium Settings Cards */
+  section.settings-card,
+  .premium-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    padding: 1.75rem;
+    margin-bottom: var(--space-lg);
+    transition: all 0.3s ease;
+  }
+  
+  section.settings-card:hover,
+  .premium-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(var(--primary-color-rgb), 0.15);
+  }
+
+  /* Document Cards */
+  .document-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    @apply rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 p-5;
+  }
+  
+  /* Chat Messages */
+  .chat-message {
+    @apply p-5 rounded-lg mb-5 max-w-[85%];
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .chat-message-user {
+    background-color: var(--primary-color);
+    color: white;
+    @apply ml-auto;
+    border-bottom-right-radius: 0.25rem;
+  }
+  
+  .chat-message-assistant {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    @apply mr-auto;
+    border-bottom-left-radius: 0.25rem;
+  }
+  
+  .chat-message:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Navigation */
+  .sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: var(--space-lg);
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .sidebar-item {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-xs);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .sidebar-item:hover {
+    background-color: var(--bg-tertiary);
+  }
+
+  .sidebar-item.active {
+    background-color: var(--sidebar-highlight);
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+
+  .nav-item {
+    color: var(--sidebar-text);
+    @apply flex items-center px-3 py-2 rounded-md transition-colors duration-200;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--bg-accent);
+    color: var(--text-accent);
+  }
+  
+  .nav-item-active {
+    background-color: var(--sidebar-highlight);
+    color: var(--primary-color);
+  }
+  
+  /* Form Elements */
+  .input {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .input:focus, input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px var(--primary-muted), 0 0 20px rgba(var(--primary-color-rgb), 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .button {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .button:active {
+    transform: translateY(1px);
+  }
+  
+  .button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .button-primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+  }
+
+  .button-primary:hover {
+    background-color: var(--primary-light);
+  }
+
+  .button-secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+  }
+
+  .button-secondary:hover {
+    background-color: var(--bg-accent);
+  }
+  
+  /* Toggle Switch */
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--toggle-bg-off);
+    transition: 0.4s;
+    border-radius: var(--radius-full);
+  }
+
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .toggle-slider {
+    background-color: var(--toggle-bg-on);
+  }
+
+  input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+  }
+  
+  /* Shadows and Effects */
+  .card-shadow {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .heading {
+    color: var(--text-accent);
+  }
+}
+
+@layer utilities {
+  /* Modern Glassmorphism Utilities */
+  .glassmorphism {
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+  }
+  
+  .glassmorphism-border {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .glassmorphism-primary {
+    background: linear-gradient(135deg, 
+      rgba(var(--primary-color-rgb), 0.15) 0%, 
+      rgba(var(--primary-color-rgb), 0.05) 100%
+    );
+  }
+  
+  .glassmorphism-secondary {
+    background: linear-gradient(135deg, 
+      rgba(30, 30, 30, 0.5) 0%, 
+      rgba(20, 20, 20, 0.6) 100%
+    );
+  }
+  
+  .glassmorphism-tertiary {
+    background: linear-gradient(135deg, 
+      rgba(45, 45, 45, 0.5) 0%, 
+      rgba(30, 30, 30, 0.6) 100%
+    );
+  }
+  
+  .glassmorphism-accent {
+    background: linear-gradient(135deg, 
+      rgba(var(--primary-color-rgb), 0.3) 0%, 
+      rgba(var(--primary-color-rgb), 0.1) 100%
+    );
+  }
+  
+  /* Glass Panel - More Subtle Than Glassmorphism */
+  .glass-panel {
+    background: rgba(30, 30, 30, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .glass-panel-border {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-panel-elevated {
+    background: rgba(40, 40, 40, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-panel-sunken {
+    background: rgba(20, 20, 20, 0.3);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Floating Elements */
+  .floating-element {
+    transform: translateZ(0);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .floating-element-low {
+    box-shadow: 
+      0 2px 10px rgba(0, 0, 0, 0.1),
+      0 10px 20px -5px rgba(var(--primary-color-rgb), 0.08);
+  }
+  
+  .floating-element-medium {
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.12),
+      0 20px 25px -5px rgba(var(--primary-color-rgb), 0.12);
+  }
+  
+  .floating-element-high {
+    box-shadow: 
+      0 15px 40px rgba(0, 0, 0, 0.2),
+      0 30px 35px -5px rgba(var(--primary-color-rgb), 0.18);
+  }
+  
+  .floating-element-ultra {
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.25),
+      0 40px 60px -10px rgba(var(--primary-color-rgb), 0.3);
+  }
+  
+  /* Legacy Classes - Maintained for Compatibility */
+  .premium-shadow {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1), 
+                0 0 20px rgba(var(--primary-color-rgb), 0.15);
+  }
+  
+  .premium-shadow-hover:hover {
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15), 
+                0 10px 30px rgba(var(--primary-color-rgb), 0.25);
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  /* Improved Text */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .text-gradient-primary {
+    background-image: linear-gradient(135deg, 
+      var(--primary-color) 0%, 
+      var(--primary-light) 100%
+    );
+  }
+}
